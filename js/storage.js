@@ -28,6 +28,13 @@ export function saveProjects(project) {
     }
     saveAll(data);
 }
+export function deleteProject(projectId) {
+    const data = loadAll();
+    data.projects = data.projects.filter(p => p.id !== projectId);
+    data.tasks = data.tasks.filter(t => t.projectId !== projectId);
+    data.sessions = data.sessions.filter(s => s.projectId !== projectId);
+    saveAll(data);
+}
 export function getHackathons() {
   return loadAll().hackathons;
 }
@@ -51,6 +58,21 @@ export function addTasks(task) {
     data.tasks.push(task);
     saveAll(data);
 }
+export function saveTasks(task){
+    const data = loadAll ();
+    const index = data.tasks.findIndex(t => t.id === task.id)
+    if(index >= 0) {
+        data.tasks[index] = task;
+    } else {
+        data.tasks.push(task);
+    }
+    saveAll(data);
+}
+export function deleteTask(taskId) {
+    const data = loadAll();
+    data.tasks = data.tasks.filter(t => t.id !== taskId);
+    saveAll(data);
+}
 
 export function getSessions(projectId) {
     return loadAll().sessions.filter(s => s.projectId === projectId);
@@ -68,4 +90,4 @@ export function addXpEvents(xpEvent) {
     const data = loadAll();
     data.xpEvents.push(xpEvent);
     saveAll(data);
-} 
+}

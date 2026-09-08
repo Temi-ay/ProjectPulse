@@ -21,11 +21,15 @@
 }
 #project-form button {
     padding: var(--spacing-small) var(--spacing-medium);
-    background: var(--color-accent);
-    color: white;
+    background: var(--color-accent-gradient);
+    color: rgb(135, 5, 105);
     border: none;
     border-radius: var(--radius-small);
     cursor: pointer;
+    transition: filter 0.15s;
+}
+#project-form button:hover {
+    filter: brightness(1.08);
 }
 
 #project-grid {
@@ -44,7 +48,8 @@
     transition: transform 0.2s;
 }
 .project-card:hover {
-    border-color: var(--color-accent);
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 6px 16px var(--shadow-accent);
     transform: translateY(-2px);
 }
 
@@ -61,4 +66,111 @@
     border: none;
     margin-bottom: var(--spacing-medium);
     cursor: pointer;
+}
+
+.empty-state {
+    color: var(--color-text-muted);
+    font-style: italic;
+    padding: var(--spacing-large) 0;
+}
+
+.project-card a {
+    color: var(--color-accent);
+    word-break: break-all;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: var(--spacing-small) 0;
+}
+
+.task-item span {
+    flex: 1;
+}
+
+.task-delete {
+    background: transparent;
+    border: none;
+    color: var(--color-danger);
+    cursor: pointer;
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+#edit-project,
+#delete-project {
+    margin-left: var(--spacing-small);
+}
+
+#delete-project {
+    color: var(--color-danger);
+}
+
+#edit-project {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-small);
+    padding: var(--spacing-extra-small) var(--spacing-small);
+    cursor: pointer;
+}
+
+#delete-project {
+    background: transparent;
+    border: 1px solid var(--color-danger);
+    border-radius: var(--radius-small);
+    padding: var(--spacing-extra-small) var(--spacing-small);
+    cursor: pointer;
+}
+#delete-project:hover {
+    background: var(--color-danger);
+    color: white;
+}
+
+#detail-timer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    margin: var(--spacing-medium) 0;
+}
+
+#timer-display {
+    font-family: var(--font-sans);
+    font-weight: bold;
+    font-size: 1.3em;
+    color: var(--color-accent);
+    min-width: 5.5em;
+}
+
+#start-timer,
+#stop-timer,
+#checklist-form button {
+    padding: var(--spacing-small) var(--spacing-medium);
+    border: none;
+    border-radius: var(--radius-small);
+    cursor: pointer;
+    color: white;
+}
+
+#start-timer,
+#checklist-form button {
+    background: var(--color-accent-gradient);
+}
+#start-timer:hover,
+#checklist-form button:hover {
+    filter: brightness(1.08);
+}
+
+#stop-timer {
+    background: var(--color-danger);
+}
+#stop-timer:hover {
+    background: var(--color-danger-hover);
+}
+
+.countdown {
+    color: var(--color-accent-blue);
+    font-weight: bold;
 }
