@@ -2,10 +2,10 @@
 A website inspired by Hackatime, Created this website with the purpose on tracking hackathon, uncompleted projects and their deadlines  
 
 ## ScreenShot
-![Project Pulse]()
+![Project Pulse](Screenshot_9-9-2026_0036_temi-ay.github.io.jpeg)
 
 ## Try It
-[Demo Link]()
+[Demo Link](https://temi-ay.github.io/ProjectPulse/)
 
 To try just open the link and try it
 
